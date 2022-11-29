@@ -34,6 +34,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 //routes
+app.use("/register", require("./routes/register"));
 
 // error handler
 app.use(errorHandler);
