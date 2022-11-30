@@ -35,6 +35,7 @@ app.use(cookieParser());
 
 //routes
 app.use("/register", require("./routes/register"));
+app.use("/auth", require("./routes/auth"));
 
 // error handler
 app.use(errorHandler);
