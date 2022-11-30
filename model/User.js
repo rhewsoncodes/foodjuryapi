@@ -22,6 +22,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  refreshToken: String,
   meals: [
     {
       type: Schema.Types.ObjectId,
