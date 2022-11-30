@@ -29,6 +29,12 @@ const userSchema = new Schema({
       ref: "Meal",
     },
   ],
+  foods: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Food",
+    },
+  ],
   symptoms: [
     {
       type: Schema.Types.ObjectId,
