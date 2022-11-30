@@ -37,7 +37,7 @@ const handleLogin = async (req, res) => {
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
       sameSite: "None",
-      secure: true,
+      //secure: true,  (REMEMBER TO UNCOMMENT FOR FINAL BUILD)
       maxAge: 24 * 60 * 60 * 1000,
     }); //create cookie for refresh token
     res.json({ accessToken }); //spit out access token for local storage
