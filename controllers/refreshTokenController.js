@@ -20,7 +20,8 @@ const handleRefreshToken = async (req, res) => {
     const accessToken = jwt.sign(
       {
         UserInfo: {
-          username: decoded.username,
+          username: decoded.UserInfo.username,
+          id: decoded.UserInfo.id,
         },
       },
       process.env.ACCESS_TOKEN_SECRET,

@@ -13,11 +13,13 @@ const handleLogin = async (req, res) => {
   const foundUser = await User.findOne({ username: user }).exec(); // search for user in DB
   if (!foundUser) return res.sendStatus(401);
   const match = await bcrypt.compare(pwd, foundUser.password); // verify passsword
+  console.log(foundUser._id);
   if (match) {
     const accessToken = jwt.sign(
       {
         UserInfo: {
           username: foundUser.username,
+          id: foundUser._id,
         },
       },
       process.env.ACCESS_TOKEN_SECRET,
@@ -27,6 +29,7 @@ const handleLogin = async (req, res) => {
       {
         UserInfo: {
           username: foundUser.username,
+          id: foundUser._id,
         },
       },
       process.env.REFRESH_TOKEN_SECRET,

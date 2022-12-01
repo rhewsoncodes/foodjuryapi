@@ -39,6 +39,9 @@ app.use("/auth", require("./routes/auth"));
 app.use("/refresh", require("./routes/refresh"));
 app.use("/logout", require("./routes/logout"));
 
+app.use(verifyJWT);
+
+app.use("/api/food", require("./routes/api/food"));
 // error handler
 app.use(errorHandler);
 
