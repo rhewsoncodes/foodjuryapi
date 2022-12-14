@@ -42,6 +42,7 @@ app.use("/logout", require("./routes/logout"));
 app.use(verifyJWT);
 
 app.use("/api/food", require("./routes/api/food"));
+app.use("/api/portion", require("./routes/api/portion"));
 // error handler
 app.use(errorHandler);
 

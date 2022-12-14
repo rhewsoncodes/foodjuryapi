@@ -10,7 +10,8 @@ const getUsersFoods = async (req, res) => {
 const createNewFood = async (req, res) => {
   if (!req?.body?.foodName)
     return res.status(400).json({ message: "Food name required." });
-  const duplicate = Food.findOne({ foodName: req.body.foodName }).exec();
+  const duplicate = await Food.findOne({ foodName: req.body.foodName }).exec();
+  console.log(duplicate);
   if (duplicate) return res.sendStatus(409);
   try {
     const ourFood = await Food.create({
