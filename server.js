@@ -44,6 +44,8 @@ app.use(verifyJWT);
 app.use("/api/food", require("./routes/api/food"));
 app.use("/api/portion", require("./routes/api/portion"));
 app.use("/api/meal", require("./routes/api/meal"));
+app.use("/api/symptom", require("./routes/api/symptom"));
+app.use("/api/symptominstance", require("./routes/api/symptominstance"));
 // error handler
 app.use(errorHandler);
 

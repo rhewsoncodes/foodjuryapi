@@ -1,4 +1,3 @@
-const Food = require("../model/Food");
 const Meal = require("../model/Meal");
 const User = require("../model/User");
 

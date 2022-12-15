@@ -41,6 +41,12 @@ const userSchema = new Schema({
       ref: "Symptom",
     },
   ],
+  symptomInstances: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "SymptomInstance",
+    },
+  ],
   dailyRatings: [
     {
       type: Schema.Types.ObjectId,
